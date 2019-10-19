@@ -1,0 +1,7 @@
+com\taobao\controller\ItemCatController.class
+com\taobao\controller\ItemContentManagerController.class
+com\taobao\controller\ItemController.class
+com\taobao\controller\BaseController.class
+com\taobao\controller\FileUploadController.class
+com\taobao\controller\ItemParamController.class
+com\taobao\controller\ItemContentCategoryController.class
