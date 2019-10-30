@@ -1,0 +1,3 @@
+com\taobao\item\controller\BaseController.class
+com\taobao\item\listenter\ItemDescListenter.class
+com\taobao\item\bo\BOItem.class

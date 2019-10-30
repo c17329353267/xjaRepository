@@ -1,0 +1,4 @@
+com\taobao\search\dao\impl\SearchSolrDaoImpl.class
+com\taobao\search\service\impl\SearchServiceImpl.class
+com\taobao\search\dao\SearchSolrDao.class
+com\taobao\search\listener\MyTopicListenter.class

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <dataConfig>
+		  <dataSource type="JdbcDataSource"
+		  driver="com.mysql.jdbc.Driver"
+		  url="jdbc:mysql://localhost:3306/jingdong"
+		  user="root"
+		  password="123456"/>
+		  <document>
+			  <entity name="idid" query="SELECT pid,name,catalog,catalog_name,price,number,description,picture FROM products">
+			  <!--column:代表表字段名，name：代表着对应着域名-->
+			  <field column="pid" name="id"/>
+			  <field column="name" name="products_name"/>
+			  <field column="catalog" name="products_catalog"/>
+			  <field column="catalog_name" name="products_catalog_name"/>
+			  <field column="price" name="products_price"/>
+			  <field column="number" name="products_number"/>
+			  <field column="description" name="products_description"/>
+			  <field column="picture" name="products_picture"/>
+			  </entity>
+		 </document>
+ </dataConfig>

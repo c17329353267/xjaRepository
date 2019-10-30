@@ -1,0 +1,2 @@
+com\taobao\redis\service\impl\RedisServiceImpl.class
+com\taobao\redis\listenter\RedisListenter.class

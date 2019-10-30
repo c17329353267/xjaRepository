@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+		<!-- <context:component-scan base-package="com.taobao.*"></context:component-scan> -->
+		<context:property-placeholder location="classpath:config/*.properties"/>
+		<!-- <aop:aspectj-autoproxy/>	 -->
+		<!--1.配置连接池
+	
+		  -->
+			<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+				<property name="driverClassName" value="${mysql.driver}"/>
+				<property name="username" value="${mysql.username}"/>
+				<property name="password" value="${mysql.password}"/>
+				<property name="url" value="${mysql.url}"/>
+			</bean>
+		
+		<!--2.sqlsession工厂  -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"/>
+			<property name="configLocation" value="classpath:mybatis/mybatis.xml"/>
+<!-- 			<property name="mapperLocations" value="classpath:mapper/*.xml"/> -->
+		</bean>
+		
+		<!--3.mapper映射  -->
+		<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+			<property name="basePackage" value="com.taobao.mapper"/>
+		</bean>
+		
+		<!--4.事务处理  -->
+		
+		<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource"/>
+		</bean>
+		
+		<tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+		
+		
+</beans>

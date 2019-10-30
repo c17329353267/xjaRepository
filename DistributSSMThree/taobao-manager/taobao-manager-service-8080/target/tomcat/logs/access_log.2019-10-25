@@ -1,0 +1,1 @@
+0:0:0:0:0:0:0:1 - - [25/Oct/2019:16:39:29 +0800] "GET /plugins/jquery/jquery.min.js HTTP/1.1" 404 1007 http-bio-8080-exec-1 31
